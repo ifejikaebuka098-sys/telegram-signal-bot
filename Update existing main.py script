@@ -1,0 +1,38 @@
+import time
+import requests
+
+# ==============================
+# TELEGRAM BOT CONFIG
+# ==============================
+
+BOT_TOKEN = "PUT_YOUR_BOT_TOKEN_HERE"
+CHAT_ID = "PUT_YOUR_CHAT_ID_HERE"
+
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
+# ==============================
+# SEND MESSAGE FUNCTION
+# ==============================
+
+def send_message(text):
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": text,
+        "parse_mode": "HTML"
+    }
+    try:
+        response = requests.post(TELEGRAM_API_URL, json=payload, timeout=10)
+        return response.json()
+    except Exception as e:
+        print("Telegram Error:", e)
+
+# ==============================
+# BOT START
+# ==============================
+
+if __name__ == "__main__":
+    send_message("🤖 <b>Telegram Signal Bot Started</b>")
+
+    while True:
+        send_message("📊 <b>Test Signal:</b> Bot is running correctly")
+        time.sleep(60)
