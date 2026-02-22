@@ -1,14 +1,13 @@
-import os
 import time
 import requests
 from datetime import datetime, timedelta
 import random  # for demo trend simulation
 
 # -------------------------------
-# Telegram setup
+# Telegram setup (direct token & chat ID)
 # -------------------------------
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # replace directly for testing if needed
-CHAT_ID = os.getenv("CHAT_ID")      # replace directly for testing if needed
+BOT_TOKEN = "8369673752:AAGChqjqvpQ3DW89WGgFW8IRTW94BjC2aoo"  # your bot token
+CHAT_ID = "6918721957"  # your chat ID
 
 # -------------------------------
 # OTC Currency Pairs & flags
